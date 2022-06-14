@@ -19,7 +19,8 @@ namespace Exercice4
             }
             else
             {
-                throw new BadIDException();
+                Exception e = new Exception("Le cid n'est pas valide");
+                throw new BadIDException(e);
             }
             this.name = name;
         }
