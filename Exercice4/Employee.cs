@@ -8,9 +8,30 @@ namespace Exercice4
 {
 	public class Employee : IEmployee
 	{
+		public string eid;
+		public string name;
+		
 		public Employee(string eid, string name)
 		{
-			throw new NotImplementedException();
+			bool countainDigit=false;
+			foreach(char c in eid)
+            {
+                if (char.IsDigit(c))
+                {
+					countainDigit = true;
+					break;
+                }
+            }
+            if(countainDigit != true && eid.Length == 3)
+            {
+				this.eid = eid;
+            }
+			else
+            {
+				Exception e = new Exception("L'eid n'est pas valide");
+                throw new BadIDException(e);
+            }
+			this.name = name;
 		}
 
 		int IComparable<IEmployee>.CompareTo(IEmployee other)
@@ -25,12 +46,12 @@ namespace Exercice4
 
 		string IEmployee.GetEID()
 		{
-			throw new NotImplementedException();
+			return eid;
 		}
 
 		string IPerson.GetName()
 		{
-			throw new NotImplementedException();
+			return name;
 		}
 
 		void IPrintable.Print(IPrinter printer)

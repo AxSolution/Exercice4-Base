@@ -10,13 +10,13 @@ namespace TestsExo4
 		[TestMethod]
 		public void BadEmployeeID()
 		{
-			Assert.ThrowsException<BadIDException>(() => new Employee("123", "Sylvain Bellamy"));
-			Assert.ThrowsException<BadIDException>(() => new Employee("1B3", "Sylvain Bellamy"));
-			Assert.ThrowsException<BadIDException>(() => new Employee("1BA", "Sylvain Bellamy"));
-			Assert.ThrowsException<BadIDException>(() => new Employee("ZB3", "Sylvain Bellamy"));
-			Assert.ThrowsException<BadIDException>(() => new Employee("ADCS", "Sylvain Bellamy"));
-			Assert.ThrowsException<BadIDException>(() => new Employee(".", "Sylvain Bellamy"));
-		}
+            Assert.ThrowsException<BadIDException>(() => new Employee("123", "Sylvain Bellamy"));
+            Assert.ThrowsException<BadIDException>(() => new Employee("1B3", "Sylvain Bellamy"));
+            Assert.ThrowsException<BadIDException>(() => new Employee("1BA", "Sylvain Bellamy"));
+            Assert.ThrowsException<BadIDException>(() => new Employee("ZB3", "Sylvain Bellamy"));
+            Assert.ThrowsException<BadIDException>(() => new Employee("ADCS", "Sylvain Bellamy"));
+            Assert.ThrowsException<BadIDException>(() => new Employee(".", "Sylvain Bellamy"));
+        }
 		[TestMethod]
 		public void BadCustomerID()
 		{
