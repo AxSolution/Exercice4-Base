@@ -13,23 +13,16 @@ namespace Exercice4
 		
 		public Employee(string eid, string name)
 		{
-			bool countainDigit=false;
-			foreach(char c in eid)
-            {
-                if (char.IsDigit(c))
-                {
-					countainDigit = true;
-					break;
-                }
+
+            if(!eid.All( x=> Char.IsLetter(x)) || eid.Length != 3) {
+				throw new BadIDException("L'eid n'est pas valide");
             }
-            if(countainDigit != true && eid.Length == 3)
+            else
             {
 				this.eid = eid;
             }
-			else
-            {
-                throw new BadIDException("L'eid n'est pas valide");
-            }
+                
+            
 			if(name.Length == 0)
             {
 				throw new BadNameException("Le nom ne doit pas être vide");

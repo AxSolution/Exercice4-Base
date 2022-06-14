@@ -10,6 +10,7 @@ namespace Exercice4
 	{
 		static public IEmployeeRecordAdder employeeRecordAdder = new EmployeeRecordAdder();
 		
+		
 		static public void LoadRecords(string filename)
 		{
 			throw new NotImplementedException();
