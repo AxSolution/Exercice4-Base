@@ -46,7 +46,7 @@ namespace Exercice4
 
         void IPrintable.Print(IPrinter printer)
         {
-            Console.WriteLine("cid: " + this.cid + " - name: " + this.name);
+            printer.PrintLine("[" + cid + "] " + name);
         }
     }
 }
