@@ -8,6 +8,9 @@ namespace Exercice4
 {
 	public interface IEmployeeRecordAdder
 	{
-		void AddEmployeeRecord(IEmployee employee, IDictionary<string, IEmployee> dico);
+		void AddEmployeeRecord(IEmployee employee, IDictionary<string, IEmployee> dico)
+        {
+			dico.Add(employee.GetEID(), employee);
+        }
 	}
 }

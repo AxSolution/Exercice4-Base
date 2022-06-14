@@ -10,7 +10,8 @@ namespace Exercice4
 	{
 		void ICustomerRecordAdder.AddCustomerRecord(ICustomer customer, IDictionary<string, ICustomer> dico)
 		{
-			throw new NotImplementedException();
+			dico.Add(customer.GetCID(), customer);
 		}
+
 	}
 }

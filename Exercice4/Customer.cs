@@ -12,15 +12,15 @@ namespace Exercice4
         string name;
         public Customer(string cid, string name)
         {
-            uint i = 0;
-            if (uint.TryParse(cid, out i))
+            if (cid.Length == 0 || !cid.All(x => Char.IsDigit(x)))
             {
-                this.cid = cid;
+                throw new BadIDException("Id invalide");
             }
-            else
+            if (name.Length == 0)
             {
-                throw new BadIDException("Le cid n'est pas valide");
+                throw new BadNameException("Id invalide");
             }
+            this.cid = cid;
             this.name = name;
         }
 

@@ -17,6 +17,8 @@ namespace TestsExo4
 		{
 			Mocks.MockLineReader reader = new Mocks.MockLineReader(new string[] { "Sylvain Bellamy", "1234" });
 			Mocks.MockPrinter printer = new Mocks.MockPrinter();
+			Mocks.MockHijackCustomerRecordAdderFakeDico fakeDico = new Mocks.MockHijackCustomerRecordAdderFakeDico(CustomerRecordManager.customerRecordAdder);
+			CustomerRecordManager.customerRecordAdder = fakeDico;
 			Program.ProcedureCreateNewCustomer(reader, printer);
 			Assert.AreEqual("Enter the customer name:", printer.lines[0]);
 			Assert.AreEqual("Enter the customer id:", printer.lines[1]);
