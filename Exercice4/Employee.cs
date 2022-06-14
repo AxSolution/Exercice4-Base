@@ -56,7 +56,7 @@ namespace Exercice4
 
 		void IPrintable.Print(IPrinter printer)
 		{
-			throw new NotImplementedException();
+			printer.PrintLine("[" + eid +"] " + name );
 		}
 	}
 }
