@@ -10,10 +10,8 @@ namespace Exercice4
 	
 	public class BadIDException : Exception
 	{
-		string message;
-		public BadIDException(Exception e)
+		public BadIDException(string? message) : base(message)
     {
-			message = e.Message;
     }
 		
 	}

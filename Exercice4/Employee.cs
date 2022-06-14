@@ -28,10 +28,17 @@ namespace Exercice4
             }
 			else
             {
-				Exception e = new Exception("L'eid n'est pas valide");
-                throw new BadIDException(e);
+                throw new BadIDException("L'eid n'est pas valide");
             }
-			this.name = name;
+			if(name.Length == 0)
+            {
+				throw new BadNameException("Le nom ne doit pas être vide");
+			}
+            else
+            {
+				this.name = name;
+            }
+			
 		}
 
 		int IComparable<IEmployee>.CompareTo(IEmployee other)

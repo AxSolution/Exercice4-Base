@@ -15,5 +15,10 @@ namespace TestsExo4.Mocks
 		{
 			lines.Add(str);
 		}
+
+		string GetLine()
+        {
+			return lines.Last();
+        }
 	}
 }
